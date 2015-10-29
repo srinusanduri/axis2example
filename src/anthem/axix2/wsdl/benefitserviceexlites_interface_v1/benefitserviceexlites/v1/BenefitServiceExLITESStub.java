@@ -2,25 +2,24 @@
  * BenefitServiceExLITESStub.java
  *
  * This file was auto-generated from WSDL
- * by the Apache Axis2 version: 1.6.3  Built on : Jun 27, 2015 (11:17:49 BST)
+ * by the Apache Axis2 version: 1.6.3 Built on : Jun 27, 2015 (11:17:49 BST)
  */
 package anthem.axix2.wsdl.benefitserviceexlites_interface_v1.benefitserviceexlites.v1;
+
+import javax.xml.namespace.QName;
 
 import anthem.axis.schema.getacctbalancelitesrequest.v1.GetAcctBalanceLITESRequest;
 import anthem.axix2.schema.getacctbalancelitesresponse.v1.GetAcctBalanceLITESResponse;
 import anthem.axix2.wellpoint.esb.header.v3.ESBHeaderType;
 import anthem.axix2.wellpoint.service.exception.v2.ExceptionListType;
 
-import com.castlight.ws.healthfund.anthem.benefitserviceexlites_interface_v1.benefitserviceexlites.v1.BenefitServiceExLITES;
-
-
 /*
- *  BenefitServiceExLITESStub java implementation
+ * BenefitServiceExLITESStub java implementation
  */
 public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
     private static int counter = 0;
 
-    //https://prods-dp.WELLPOINT.COM/Member/1.0/BenefitServiceExLITES
+    // https://prods-dp.WELLPOINT.COM/Member/1.0/BenefitServiceExLITES
     private static final javax.xml.bind.JAXBContext wsContext;
 
     static {
@@ -34,7 +33,7 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                     ESBHeaderType.class);
         } catch (javax.xml.bind.JAXBException ex) {
             System.err.println("Unable to create JAXBContext: " +
-                ex.getMessage());
+                    ex.getMessage());
             ex.printStackTrace(System.err);
             Runtime.getRuntime().exit(-1);
         } finally {
@@ -44,31 +43,33 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
 
     protected org.apache.axis2.description.AxisOperation[] _operations;
 
-    //hashmaps to keep the fault mapping
+    // hashmaps to keep the fault mapping
     private java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
+
     private java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
+
     private java.util.HashMap faultMessageMap = new java.util.HashMap();
 
-    /////////////////////////////////////////////////////////////////////////
+    // ///////////////////////////////////////////////////////////////////////
     private javax.xml.namespace.QName[] opNameArray = null;
 
     /**
-     *Constructor that takes in a configContext
+     * Constructor that takes in a configContext
      */
     public BenefitServiceExLITESStub(
-        org.apache.axis2.context.ConfigurationContext configurationContext,
-        java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
+            org.apache.axis2.context.ConfigurationContext configurationContext,
+            java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
         this(configurationContext, targetEndpoint, false);
     }
 
     /**
-     * Constructor that takes in a configContext  and useseperate listner
+     * Constructor that takes in a configContext and useseperate listner
      */
     public BenefitServiceExLITESStub(
-        org.apache.axis2.context.ConfigurationContext configurationContext,
-        java.lang.String targetEndpoint, boolean useSeparateListener)
-        throws org.apache.axis2.AxisFault {
-        //To populate AxisService
+            org.apache.axis2.context.ConfigurationContext configurationContext,
+            java.lang.String targetEndpoint, boolean useSeparateListener)
+            throws org.apache.axis2.AxisFault {
+        // To populate AxisService
         populateAxisService();
         populateFaults();
 
@@ -78,8 +79,8 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
         _service.applyPolicy();
 
         _serviceClient.getOptions()
-                      .setTo(new org.apache.axis2.addressing.EndpointReference(
-                targetEndpoint));
+                .setTo(new org.apache.axis2.addressing.EndpointReference(
+                        targetEndpoint));
         _serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
     }
 
@@ -87,10 +88,10 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
      * Default Constructor
      */
     public BenefitServiceExLITESStub(
-        org.apache.axis2.context.ConfigurationContext configurationContext)
-        throws org.apache.axis2.AxisFault {
+            org.apache.axis2.context.ConfigurationContext configurationContext)
+            throws org.apache.axis2.AxisFault {
         this(configurationContext,
-            "https://prods-dp.WELLPOINT.COM/Member/1.0/BenefitServiceExLITES");
+                "https://prods-dp.WELLPOINT.COM/Member/1.0/BenefitServiceExLITES");
     }
 
     /**
@@ -104,7 +105,7 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
      * Constructor taking the target endpoint
      */
     public BenefitServiceExLITESStub(java.lang.String targetEndpoint)
-        throws org.apache.axis2.AxisFault {
+            throws org.apache.axis2.AxisFault {
         this(null, targetEndpoint);
     }
 
@@ -117,16 +118,16 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
         counter = counter + 1;
 
         return java.lang.Long.toString(java.lang.System.currentTimeMillis()) +
-        "_" + counter;
+                "_" + counter;
     }
 
     private void populateAxisService() throws org.apache.axis2.AxisFault {
-        //creating the Service with a unique name
+        // creating the Service with a unique name
         _service = new org.apache.axis2.description.AxisService(
                 "BenefitServiceExLITES" + getUniqueSuffix());
         addAnonymousOperations();
 
-        //creating the operations
+        // creating the operations
         org.apache.axis2.description.AxisOperation __operation;
 
         _operations = new org.apache.axis2.description.AxisOperation[1];
@@ -138,36 +139,40 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                 "getAcctBalanceLITES"));
         _service.addOperation(__operation);
 
-        (__operation).getMessage(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_OUT_VALUE)
-         .getPolicySubject()
-         .attachPolicy(getPolicy(
-                "<wsp:Policy wsu:Id=\"MyWebServicePortBindingPolicy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"><wsp:ExactlyOne><wsp:All><sp:AsymmetricBinding xmlns:sp=\"http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702\"><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:InitiatorToken><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:X509Token><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:WssX509V3Token10/></wsp:Policy></sp:X509Token></wsp:Policy></sp:InitiatorToken><sp:RecipientToken><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:X509Token><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:WssX509V3Token10/></wsp:Policy></sp:X509Token></wsp:Policy></sp:RecipientToken><sp:AlgorithmSuite><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:TripleDesRsa15/></wsp:Policy></sp:AlgorithmSuite><sp:Layout><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:Strict/></wsp:Policy></sp:Layout><sp:IncludeTimestamp/><sp:OnlySignEntireHeadersAndBody/></wsp:Policy></sp:AsymmetricBinding><sp:SignedParts xmlns:sp=\"http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702\">\n               <sp:Body/>\n            </sp:SignedParts><ramp:RampartConfig xmlns:ramp=\"http://ws.apache.org/rampart/policy\">\n			    <ramp:userCertAlias>clh_prod</ramp:userCertAlias>\n			    <ramp:passwordCallbackClass>com.castlight.ws.healthfund.anthem.ws.callbacks.PrivateKeyPasswordCallbackHandler</ramp:passwordCallbackClass>\n			\n			    <ramp:signatureCrypto>\n			       <ramp:crypto provider=\"org.apache.ws.security.components.crypto.Merlin\">\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.keystore.type\">JKS</ramp:property>\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.file\">/home/ssanduri/Projects/Ventana/servicelaunchpad/security/keystores/cacerts</ramp:property>\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.keystore.password\">changeit</ramp:property>\n			       </ramp:crypto>\n			    </ramp:signatureCrypto>\n			</ramp:RampartConfig></wsp:All></wsp:ExactlyOne></wsp:Policy>"));
+        (__operation)
+                .getMessage(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_OUT_VALUE)
+                .getPolicySubject()
+                .attachPolicy(
+                        getPolicy(
+                        "<wsp:Policy wsu:Id=\"MyWebServicePortBindingPolicy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"><wsp:ExactlyOne><wsp:All><sp:AsymmetricBinding xmlns:sp=\"http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702\"><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:InitiatorToken><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:X509Token><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:WssX509V3Token10/></wsp:Policy></sp:X509Token></wsp:Policy></sp:InitiatorToken><sp:RecipientToken><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:X509Token><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:WssX509V3Token10/></wsp:Policy></sp:X509Token></wsp:Policy></sp:RecipientToken><sp:AlgorithmSuite><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:TripleDesRsa15/></wsp:Policy></sp:AlgorithmSuite><sp:Layout><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:Strict/></wsp:Policy></sp:Layout><sp:IncludeTimestamp/><sp:OnlySignEntireHeadersAndBody/></wsp:Policy></sp:AsymmetricBinding><sp:SignedParts xmlns:sp=\"http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702\">\n               <sp:Body/>\n            </sp:SignedParts><ramp:RampartConfig xmlns:ramp=\"http://ws.apache.org/rampart/policy\">\n			    <ramp:userCertAlias>clh_prod</ramp:userCertAlias>\n			    <ramp:passwordCallbackClass>com.castlight.ws.healthfund.anthem.ws.callbacks.PrivateKeyPasswordCallbackHandler</ramp:passwordCallbackClass>\n			\n			    <ramp:signatureCrypto>\n			       <ramp:crypto provider=\"org.apache.ws.security.components.crypto.Merlin\">\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.keystore.type\">JKS</ramp:property>\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.file\">/home/ssanduri/Projects/Ventana/servicelaunchpad/security/keystores/cacerts</ramp:property>\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.keystore.password\">changeit</ramp:property>\n			       </ramp:crypto>\n			    </ramp:signatureCrypto>\n			</ramp:RampartConfig></wsp:All></wsp:ExactlyOne></wsp:Policy>"));
 
-        (__operation).getMessage(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE)
-         .getPolicySubject()
-         .attachPolicy(getPolicy(
-                "<wsp:Policy wsu:Id=\"MyWebServicePortBindingPolicy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"><wsp:ExactlyOne><wsp:All><sp:AsymmetricBinding xmlns:sp=\"http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702\"><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:InitiatorToken><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:X509Token><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:WssX509V3Token10/></wsp:Policy></sp:X509Token></wsp:Policy></sp:InitiatorToken><sp:RecipientToken><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:X509Token><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:WssX509V3Token10/></wsp:Policy></sp:X509Token></wsp:Policy></sp:RecipientToken><sp:AlgorithmSuite><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:TripleDesRsa15/></wsp:Policy></sp:AlgorithmSuite><sp:Layout><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:Strict/></wsp:Policy></sp:Layout><sp:IncludeTimestamp/><sp:OnlySignEntireHeadersAndBody/></wsp:Policy></sp:AsymmetricBinding><sp:SignedParts xmlns:sp=\"http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702\">\n               <sp:Body/>\n            </sp:SignedParts><ramp:RampartConfig xmlns:ramp=\"http://ws.apache.org/rampart/policy\">\n			    <ramp:userCertAlias>clh_prod</ramp:userCertAlias>\n			    <ramp:passwordCallbackClass>com.castlight.ws.healthfund.anthem.ws.callbacks.PrivateKeyPasswordCallbackHandler</ramp:passwordCallbackClass>\n			\n			    <ramp:signatureCrypto>\n			       <ramp:crypto provider=\"org.apache.ws.security.components.crypto.Merlin\">\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.keystore.type\">JKS</ramp:property>\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.file\">/home/ssanduri/Projects/Ventana/servicelaunchpad/security/keystores/cacerts</ramp:property>\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.keystore.password\">changeit</ramp:property>\n			       </ramp:crypto>\n			    </ramp:signatureCrypto>\n			</ramp:RampartConfig></wsp:All></wsp:ExactlyOne></wsp:Policy>"));
+        (__operation)
+                .getMessage(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE)
+                .getPolicySubject()
+                .attachPolicy(
+                        getPolicy(
+                        "<wsp:Policy wsu:Id=\"MyWebServicePortBindingPolicy\" xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\" xmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"><wsp:ExactlyOne><wsp:All><sp:AsymmetricBinding xmlns:sp=\"http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702\"><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:InitiatorToken><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:X509Token><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:WssX509V3Token10/></wsp:Policy></sp:X509Token></wsp:Policy></sp:InitiatorToken><sp:RecipientToken><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:X509Token><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:WssX509V3Token10/></wsp:Policy></sp:X509Token></wsp:Policy></sp:RecipientToken><sp:AlgorithmSuite><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:TripleDesRsa15/></wsp:Policy></sp:AlgorithmSuite><sp:Layout><wsp:Policy xmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"><sp:Strict/></wsp:Policy></sp:Layout><sp:IncludeTimestamp/><sp:OnlySignEntireHeadersAndBody/></wsp:Policy></sp:AsymmetricBinding><sp:SignedParts xmlns:sp=\"http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702\">\n               <sp:Body/>\n            </sp:SignedParts><ramp:RampartConfig xmlns:ramp=\"http://ws.apache.org/rampart/policy\">\n			    <ramp:userCertAlias>clh_prod</ramp:userCertAlias>\n			    <ramp:passwordCallbackClass>com.castlight.ws.healthfund.anthem.ws.callbacks.PrivateKeyPasswordCallbackHandler</ramp:passwordCallbackClass>\n			\n			    <ramp:signatureCrypto>\n			       <ramp:crypto provider=\"org.apache.ws.security.components.crypto.Merlin\">\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.keystore.type\">JKS</ramp:property>\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.file\">/home/ssanduri/Projects/Ventana/servicelaunchpad/security/keystores/cacerts</ramp:property>\n			          <ramp:property name=\"org.apache.ws.security.crypto.merlin.keystore.password\">changeit</ramp:property>\n			       </ramp:crypto>\n			    </ramp:signatureCrypto>\n			</ramp:RampartConfig></wsp:All></wsp:ExactlyOne></wsp:Policy>"));
 
         _operations[0] = __operation;
     }
 
-    //populates the faults
+    // populates the faults
     private void populateFaults() {
         faultExceptionNameMap.put(new org.apache.axis2.client.FaultMapKey(
                 new javax.xml.namespace.QName(
-                    "http://wellpoint.com/service/exception/v2", "ExceptionList"),
+                        "http://wellpoint.com/service/exception/v2", "ExceptionList"),
                 "GetAcctBalanceLITES"),
-            "GetAcctBalanceLITESFault");
+                "GetAcctBalanceLITESFault");
         faultExceptionClassNameMap.put(new org.apache.axis2.client.FaultMapKey(
                 new javax.xml.namespace.QName(
-                    "http://wellpoint.com/service/exception/v2", "ExceptionList"),
+                        "http://wellpoint.com/service/exception/v2", "ExceptionList"),
                 "GetAcctBalanceLITES"),
-            "GetAcctBalanceLITESFault");
+                "GetAcctBalanceLITESFault");
         faultMessageMap.put(new org.apache.axis2.client.FaultMapKey(
                 new javax.xml.namespace.QName(
-                    "http://wellpoint.com/service/exception/v2", "ExceptionList"),
+                        "http://wellpoint.com/service/exception/v2", "ExceptionList"),
                 "GetAcctBalanceLITES"),
-            "ExceptionListType");
+                "ExceptionListType");
     }
 
     /**
@@ -176,12 +181,13 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
      * @see BenefitServiceExLITES#getAcctBalanceLITES
      * @param getAcctBalanceLITESRequest0
      * @param eSBHeader1
-     * @throws GetAcctBalanceLITESFault :
+     * @throws GetAcctBalanceLITESFault
+     *             :
      */
     public GetAcctBalanceLITESResponse getAcctBalanceLITES(
-        GetAcctBalanceLITESRequest getAcctBalanceLITESRequest0,
-        ESBHeaderType eSBHeader1)
-        throws java.rmi.RemoteException,
+            GetAcctBalanceLITESRequest getAcctBalanceLITESRequest0,
+            ESBHeaderType eSBHeader1)
+            throws java.rmi.RemoteException,
             GetAcctBalanceLITESFault {
         org.apache.axis2.context.MessageContext _messageContext = null;
 
@@ -191,8 +197,8 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient,
-                org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,
-                "&");
+                    org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,
+                    "&");
 
             // create a message context
             _messageContext = new org.apache.axis2.context.MessageContext();
@@ -201,15 +207,15 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
             env = toEnvelope(getFactory(_operationClient.getOptions()
-                                                        .getSoapVersionURI()),
+                    .getSoapVersionURI()),
                     getAcctBalanceLITESRequest0,
                     optimizeContent(
-                        new javax.xml.namespace.QName(
+                    new javax.xml.namespace.QName(
                             "http://anthem.com/service/BenefitServiceExLITES-Interface/v1",
                             "getAcctBalanceLITES")),
                     new javax.xml.namespace.QName(
-                        "http://anthem.com/service/BenefitServiceExLITES-Interface/v1",
-                        "getAcctBalanceLITES"));
+                            "http://anthem.com/service/BenefitServiceExLITES-Interface/v1",
+                            "getAcctBalanceLITES"));
 
             env.build();
 
@@ -217,13 +223,13 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
             if (eSBHeader1 != null) {
                 org.apache.axiom.om.OMElement omElementeSBHeader1 = toOM(eSBHeader1,
                         optimizeContent(
-                            new javax.xml.namespace.QName(
+                        new javax.xml.namespace.QName(
                                 "http://anthem.com/service/BenefitServiceExLITES-Interface/v1",
                                 "getAcctBalanceLITES")));
                 addHeader(omElementeSBHeader1, env);
             }
 
-            //adding SOAP soap_headers
+            // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
             // set the message context with that soap envelope
             _messageContext.setEnvelope(env);
@@ -231,14 +237,15 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
             // add the message contxt to the operation client
             _operationClient.addMessageContext(_messageContext);
 
-            //execute the operation client
+            // execute the operation client
             _operationClient.execute(true);
 
-            org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+            org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient
+                    .getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
             java.lang.Object object = fromOM(_returnEnv.getBody()
-                                                       .getFirstElement(),
+                    .getFirstElement(),
                     GetAcctBalanceLITESResponse.class,
                     getEnvelopeNamespaces(_returnEnv));
 
@@ -248,19 +255,19 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
 
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(
-                            new org.apache.axis2.client.FaultMapKey(
+                        new org.apache.axis2.client.FaultMapKey(
                                 faultElt.getQName(), "GetAcctBalanceLITES"))) {
-                    //make the fault by reflection
+                    // make the fault by reflection
                     try {
                         java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(
-                                    faultElt.getQName(), "GetAcctBalanceLITES"));
+                                faultElt.getQName(), "GetAcctBalanceLITES"));
                         java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
                         java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(java.lang.String.class);
                         java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 
-                        //message class
+                        // message class
                         java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(
-                                    faultElt.getQName(), "GetAcctBalanceLITES"));
+                                faultElt.getQName(), "GetAcctBalanceLITES"));
                         java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
                         java.lang.Object messageObject = fromOM(faultElt,
                                 messageClass, null);
@@ -301,7 +308,7 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
         } finally {
             if (_messageContext.getTransportOut() != null) {
                 _messageContext.getTransportOut().getSender()
-                               .cleanup(_messageContext);
+                        .cleanup(_messageContext);
             }
         }
     }
@@ -314,39 +321,39 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
      * @param eSBHeader1
      */
     public void startgetAcctBalanceLITES(
-        GetAcctBalanceLITESRequest getAcctBalanceLITESRequest0,
-        ESBHeaderType eSBHeader1,
-        final BenefitServiceExLITESCallbackHandler callback)
-        throws java.rmi.RemoteException {
+            GetAcctBalanceLITESRequest getAcctBalanceLITESRequest0,
+            ESBHeaderType eSBHeader1,
+            final BenefitServiceExLITESCallbackHandler callback)
+            throws java.rmi.RemoteException {
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[0].getName());
         _operationClient.getOptions().setAction("GetAcctBalanceLITES");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient,
-            org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,
-            "&");
+                org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR,
+                "&");
 
         // create SOAP envelope with that payload
         org.apache.axiom.soap.SOAPEnvelope env = null;
         final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
 
-        //Style is Doc.
+        // Style is Doc.
         env = toEnvelope(getFactory(_operationClient.getOptions()
-                                                    .getSoapVersionURI()),
+                .getSoapVersionURI()),
                 getAcctBalanceLITESRequest0,
                 optimizeContent(
-                    new javax.xml.namespace.QName(
+                new javax.xml.namespace.QName(
                         "http://anthem.com/service/BenefitServiceExLITES-Interface/v1",
                         "getAcctBalanceLITES")),
                 new javax.xml.namespace.QName(
-                    "http://anthem.com/service/BenefitServiceExLITES-Interface/v1",
-                    "getAcctBalanceLITES"));
+                        "http://anthem.com/service/BenefitServiceExLITES-Interface/v1",
+                        "getAcctBalanceLITES"));
 
         // add the soap_headers only if they are not null
         if (eSBHeader1 != null) {
             org.apache.axiom.om.OMElement omElementeSBHeader1 = toOM(eSBHeader1,
                     optimizeContent(
-                        new javax.xml.namespace.QName(
+                    new javax.xml.namespace.QName(
                             "http://anthem.com/service/BenefitServiceExLITES-Interface/v1",
                             "getAcctBalanceLITES")));
             addHeader(omElementeSBHeader1, env);
@@ -361,108 +368,113 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
         _operationClient.addMessageContext(_messageContext);
 
         _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
-                public void onMessage(
+            @Override
+            public void onMessage(
                     org.apache.axis2.context.MessageContext resultContext) {
-                    try {
-                        org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+                try {
+                    org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                        java.lang.Object object = fromOM(resultEnv.getBody()
-                                                                  .getFirstElement(),
-                                GetAcctBalanceLITESResponse.class,
-                                getEnvelopeNamespaces(resultEnv));
-                        callback.receiveResultgetAcctBalanceLITES((GetAcctBalanceLITESResponse) object);
-                    } catch (org.apache.axis2.AxisFault e) {
-                        callback.receiveErrorgetAcctBalanceLITES(e);
-                    }
+                    java.lang.Object object = fromOM(resultEnv.getBody()
+                            .getFirstElement(),
+                            GetAcctBalanceLITESResponse.class,
+                            getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultgetAcctBalanceLITES((GetAcctBalanceLITESResponse) object);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorgetAcctBalanceLITES(e);
                 }
+            }
 
-                public void onError(java.lang.Exception error) {
-                    if (error instanceof org.apache.axis2.AxisFault) {
-                        org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
-                        org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            @Override
+            public void onError(java.lang.Exception error) {
+                if (error instanceof org.apache.axis2.AxisFault) {
+                    org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+                    org.apache.axiom.om.OMElement faultElt = f.getDetail();
 
-                        if (faultElt != null) {
-                            if (faultExceptionNameMap.containsKey(
-                                        new org.apache.axis2.client.FaultMapKey(
-                                            faultElt.getQName(),
-                                            "GetAcctBalanceLITES"))) {
-                                //make the fault by reflection
-                                try {
-                                    java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(new org.apache.axis2.client.FaultMapKey(
+                    if (faultElt != null) {
+                        if (faultExceptionNameMap.containsKey(
+                                new org.apache.axis2.client.FaultMapKey(
+                                        faultElt.getQName(),
+                                        "GetAcctBalanceLITES"))) {
+                            // make the fault by reflection
+                            try {
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap
+                                        .get(new org.apache.axis2.client.FaultMapKey(
                                                 faultElt.getQName(),
                                                 "GetAcctBalanceLITES"));
-                                    java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
-                                    java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(java.lang.String.class);
-                                    java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.reflect.Constructor constructor = exceptionClass.getConstructor(java.lang.String.class);
+                                java.lang.Exception ex = (java.lang.Exception) constructor.newInstance(f.getMessage());
 
-                                    //message class
-                                    java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(
-                                                faultElt.getQName(),
-                                                "GetAcctBalanceLITES"));
-                                    java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
-                                    java.lang.Object messageObject = fromOM(faultElt,
-                                            messageClass, null);
-                                    java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
-                                            new java.lang.Class[] { messageClass });
-                                    m.invoke(ex,
+                                // message class
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(new org.apache.axis2.client.FaultMapKey(
+                                        faultElt.getQName(),
+                                        "GetAcctBalanceLITES"));
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt,
+                                        messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage",
+                                        new java.lang.Class[] { messageClass });
+                                m.invoke(ex,
                                         new java.lang.Object[] { messageObject });
 
-                                    if (ex instanceof GetAcctBalanceLITESFault) {
-                                        callback.receiveErrorgetAcctBalanceLITES((GetAcctBalanceLITESFault) ex);
+                                if (ex instanceof GetAcctBalanceLITESFault) {
+                                    callback.receiveErrorgetAcctBalanceLITES(ex);
 
-                                        return;
-                                    }
-
-                                    callback.receiveErrorgetAcctBalanceLITES(new java.rmi.RemoteException(
-                                            ex.getMessage(), ex));
-                                } catch (java.lang.ClassCastException e) {
-                                    // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorgetAcctBalanceLITES(f);
-                                } catch (java.lang.ClassNotFoundException e) {
-                                    // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorgetAcctBalanceLITES(f);
-                                } catch (java.lang.NoSuchMethodException e) {
-                                    // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorgetAcctBalanceLITES(f);
-                                } catch (java.lang.reflect.InvocationTargetException e) {
-                                    // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorgetAcctBalanceLITES(f);
-                                } catch (java.lang.IllegalAccessException e) {
-                                    // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorgetAcctBalanceLITES(f);
-                                } catch (java.lang.InstantiationException e) {
-                                    // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorgetAcctBalanceLITES(f);
-                                } catch (org.apache.axis2.AxisFault e) {
-                                    // we cannot intantiate the class - throw the original Axis fault
-                                    callback.receiveErrorgetAcctBalanceLITES(f);
+                                    return;
                                 }
-                            } else {
+
+                                callback.receiveErrorgetAcctBalanceLITES(new java.rmi.RemoteException(
+                                        ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the original Axis fault
+                                callback.receiveErrorgetAcctBalanceLITES(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the original Axis fault
+                                callback.receiveErrorgetAcctBalanceLITES(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the original Axis fault
+                                callback.receiveErrorgetAcctBalanceLITES(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the original Axis fault
+                                callback.receiveErrorgetAcctBalanceLITES(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the original Axis fault
+                                callback.receiveErrorgetAcctBalanceLITES(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the original Axis fault
+                                callback.receiveErrorgetAcctBalanceLITES(f);
+                            } catch (org.apache.axis2.AxisFault e) {
+                                // we cannot intantiate the class - throw the original Axis fault
                                 callback.receiveErrorgetAcctBalanceLITES(f);
                             }
                         } else {
                             callback.receiveErrorgetAcctBalanceLITES(f);
                         }
                     } else {
-                        callback.receiveErrorgetAcctBalanceLITES(error);
+                        callback.receiveErrorgetAcctBalanceLITES(f);
                     }
+                } else {
+                    callback.receiveErrorgetAcctBalanceLITES(error);
                 }
+            }
 
-                public void onFault(
+            @Override
+            public void onFault(
                     org.apache.axis2.context.MessageContext faultContext) {
-                    org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
-                    onError(fault);
-                }
+                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                onError(fault);
+            }
 
-                public void onComplete() {
-                    try {
-                        _messageContext.getTransportOut().getSender()
-                                       .cleanup(_messageContext);
-                    } catch (org.apache.axis2.AxisFault axisFault) {
-                        callback.receiveErrorgetAcctBalanceLITES(axisFault);
-                    }
+            @Override
+            public void onComplete() {
+                try {
+                    _messageContext.getTransportOut().getSender()
+                            .cleanup(_messageContext);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorgetAcctBalanceLITES(axisFault);
                 }
-            });
+            }
+        });
 
         org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
 
@@ -472,15 +484,15 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
             _operations[0].setMessageReceiver(_callbackReceiver);
         }
 
-        //execute the operation client
+        // execute the operation client
         _operationClient.execute(false);
     }
 
     /**
-     *  A utility method that copies the namepaces from the SOAPEnvelope
+     * A utility method that copies the namepaces from the SOAPEnvelope
      */
     private java.util.Map getEnvelopeNamespaces(
-        org.apache.axiom.soap.SOAPEnvelope env) {
+            org.apache.axiom.soap.SOAPEnvelope env) {
         java.util.Map returnMap = new java.util.HashMap();
         java.util.Iterator namespaceIterator = env.getAllDeclaredNamespaces();
 
@@ -492,12 +504,12 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
         return returnMap;
     }
 
-    ////////////////////////////////////////////////////////////////////////
+    // //////////////////////////////////////////////////////////////////////
     private static org.apache.neethi.Policy getPolicy(
-        java.lang.String policyString) {
+            java.lang.String policyString) {
         return org.apache.neethi.PolicyEngine.getPolicy(org.apache.axiom.om.OMXMLBuilderFactory.createOMBuilder(
                 new java.io.StringReader(policyString)).getDocument()
-                                                                                               .getXMLStreamReader(false));
+                .getXMLStreamReader(false));
     }
 
     private boolean optimizeContent(javax.xml.namespace.QName opName) {
@@ -505,8 +517,8 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
             return false;
         }
 
-        for (int i = 0; i < opNameArray.length; i++) {
-            if (opName.equals(opNameArray[i])) {
+        for (QName element : opNameArray) {
+            if (opName.equals(element)) {
                 return true;
             }
         }
@@ -515,14 +527,14 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        GetAcctBalanceLITESRequest param,
-        boolean optimizeContent, javax.xml.namespace.QName methodQName)
-        throws org.apache.axis2.AxisFault {
+            GetAcctBalanceLITESRequest param,
+            boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FRAGMENT,
-                Boolean.TRUE);
+                    Boolean.TRUE);
 
             org.apache.axiom.om.OMFactory factory = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
 
@@ -533,20 +545,20 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                     null);
 
             return factory.createOMElement(source, methodQName.getLocalPart(),
-                namespace);
+                    namespace);
         } catch (javax.xml.bind.JAXBException bex) {
             throw org.apache.axis2.AxisFault.makeFault(bex);
         }
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        GetAcctBalanceLITESRequest param,
-        boolean optimizeContent) throws org.apache.axis2.AxisFault {
+            GetAcctBalanceLITESRequest param,
+            boolean optimizeContent) throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FRAGMENT,
-                Boolean.TRUE);
+                    Boolean.TRUE);
 
             org.apache.axiom.om.OMFactory factory = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
 
@@ -558,17 +570,17 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                     null);
 
             return factory.createOMElement(source,
-                "GetAcctBalanceLITESRequest", namespace);
+                    "GetAcctBalanceLITESRequest", namespace);
         } catch (javax.xml.bind.JAXBException bex) {
             throw org.apache.axis2.AxisFault.makeFault(bex);
         }
     }
 
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(
-        org.apache.axiom.soap.SOAPFactory factory,
-        GetAcctBalanceLITESRequest param,
-        boolean optimizeContent, javax.xml.namespace.QName methodQName)
-        throws org.apache.axis2.AxisFault {
+            org.apache.axiom.soap.SOAPFactory factory,
+            GetAcctBalanceLITESRequest param,
+            boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
         org.apache.axiom.soap.SOAPEnvelope envelope = factory.getDefaultEnvelope();
         envelope.getBody().addChild(toOM(param, optimizeContent, methodQName));
 
@@ -576,14 +588,14 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        GetAcctBalanceLITESResponse param,
-        boolean optimizeContent, javax.xml.namespace.QName methodQName)
-        throws org.apache.axis2.AxisFault {
+            GetAcctBalanceLITESResponse param,
+            boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FRAGMENT,
-                Boolean.TRUE);
+                    Boolean.TRUE);
 
             org.apache.axiom.om.OMFactory factory = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
 
@@ -594,20 +606,20 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                     null);
 
             return factory.createOMElement(source, methodQName.getLocalPart(),
-                namespace);
+                    namespace);
         } catch (javax.xml.bind.JAXBException bex) {
             throw org.apache.axis2.AxisFault.makeFault(bex);
         }
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        GetAcctBalanceLITESResponse param,
-        boolean optimizeContent) throws org.apache.axis2.AxisFault {
+            GetAcctBalanceLITESResponse param,
+            boolean optimizeContent) throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FRAGMENT,
-                Boolean.TRUE);
+                    Boolean.TRUE);
 
             org.apache.axiom.om.OMFactory factory = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
 
@@ -619,17 +631,17 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                     null);
 
             return factory.createOMElement(source,
-                "GetAcctBalanceLITESResponse", namespace);
+                    "GetAcctBalanceLITESResponse", namespace);
         } catch (javax.xml.bind.JAXBException bex) {
             throw org.apache.axis2.AxisFault.makeFault(bex);
         }
     }
 
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(
-        org.apache.axiom.soap.SOAPFactory factory,
-        GetAcctBalanceLITESResponse param,
-        boolean optimizeContent, javax.xml.namespace.QName methodQName)
-        throws org.apache.axis2.AxisFault {
+            org.apache.axiom.soap.SOAPFactory factory,
+            GetAcctBalanceLITESResponse param,
+            boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
         org.apache.axiom.soap.SOAPEnvelope envelope = factory.getDefaultEnvelope();
         envelope.getBody().addChild(toOM(param, optimizeContent, methodQName));
 
@@ -637,14 +649,14 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        ExceptionListType param,
-        boolean optimizeContent, javax.xml.namespace.QName methodQName)
-        throws org.apache.axis2.AxisFault {
+            ExceptionListType param,
+            boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FRAGMENT,
-                Boolean.TRUE);
+                    Boolean.TRUE);
 
             org.apache.axiom.om.OMFactory factory = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
 
@@ -655,20 +667,20 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                     null);
 
             return factory.createOMElement(source, methodQName.getLocalPart(),
-                namespace);
+                    namespace);
         } catch (javax.xml.bind.JAXBException bex) {
             throw org.apache.axis2.AxisFault.makeFault(bex);
         }
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        ExceptionListType param,
-        boolean optimizeContent) throws org.apache.axis2.AxisFault {
+            ExceptionListType param,
+            boolean optimizeContent) throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FRAGMENT,
-                Boolean.TRUE);
+                    Boolean.TRUE);
 
             org.apache.axiom.om.OMFactory factory = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
 
@@ -685,10 +697,10 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
     }
 
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(
-        org.apache.axiom.soap.SOAPFactory factory,
-        ExceptionListType param,
-        boolean optimizeContent, javax.xml.namespace.QName methodQName)
-        throws org.apache.axis2.AxisFault {
+            org.apache.axiom.soap.SOAPFactory factory,
+            ExceptionListType param,
+            boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
         org.apache.axiom.soap.SOAPEnvelope envelope = factory.getDefaultEnvelope();
         envelope.getBody().addChild(toOM(param, optimizeContent, methodQName));
 
@@ -696,14 +708,14 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        ESBHeaderType param,
-        boolean optimizeContent, javax.xml.namespace.QName methodQName)
-        throws org.apache.axis2.AxisFault {
+            ESBHeaderType param,
+            boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FRAGMENT,
-                Boolean.TRUE);
+                    Boolean.TRUE);
 
             org.apache.axiom.om.OMFactory factory = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
 
@@ -714,20 +726,20 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                     null);
 
             return factory.createOMElement(source, methodQName.getLocalPart(),
-                namespace);
+                    namespace);
         } catch (javax.xml.bind.JAXBException bex) {
             throw org.apache.axis2.AxisFault.makeFault(bex);
         }
     }
 
     private org.apache.axiom.om.OMElement toOM(
-        ESBHeaderType param, boolean optimizeContent)
-        throws org.apache.axis2.AxisFault {
+            ESBHeaderType param, boolean optimizeContent)
+            throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(javax.xml.bind.Marshaller.JAXB_FRAGMENT,
-                Boolean.TRUE);
+                    Boolean.TRUE);
 
             org.apache.axiom.om.OMFactory factory = org.apache.axiom.om.OMAbstractFactory.getOMFactory();
 
@@ -744,10 +756,10 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
     }
 
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(
-        org.apache.axiom.soap.SOAPFactory factory,
-        ESBHeaderType param,
-        boolean optimizeContent, javax.xml.namespace.QName methodQName)
-        throws org.apache.axis2.AxisFault {
+            org.apache.axiom.soap.SOAPFactory factory,
+            ESBHeaderType param,
+            boolean optimizeContent, javax.xml.namespace.QName methodQName)
+            throws org.apache.axis2.AxisFault {
         org.apache.axiom.soap.SOAPEnvelope envelope = factory.getDefaultEnvelope();
         envelope.getBody().addChild(toOM(param, optimizeContent, methodQName));
 
@@ -755,22 +767,22 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
     }
 
     /**
-     *  get the default envelope
+     * get the default envelope
      */
     private org.apache.axiom.soap.SOAPEnvelope toEnvelope(
-        org.apache.axiom.soap.SOAPFactory factory) {
+            org.apache.axiom.soap.SOAPFactory factory) {
         return factory.getDefaultEnvelope();
     }
 
     private java.lang.Object fromOM(org.apache.axiom.om.OMElement param,
-        java.lang.Class type, java.util.Map extraNamespaces)
-        throws org.apache.axis2.AxisFault {
+            java.lang.Class type, java.util.Map extraNamespaces)
+            throws org.apache.axis2.AxisFault {
         try {
             javax.xml.bind.JAXBContext context = wsContext;
             javax.xml.bind.Unmarshaller unmarshaller = context.createUnmarshaller();
 
             return unmarshaller.unmarshal(param.getXMLStreamReaderWithoutCaching(),
-                type).getValue();
+                    type).getValue();
         } catch (javax.xml.bind.JAXBException bex) {
             throw org.apache.axis2.AxisFault.makeFault(bex);
         }
@@ -809,54 +821,58 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
          * @param marshaller
          */
         public JaxbRIDataSource(Class clazz, Object obj,
-            javax.xml.bind.Marshaller marshaller, String nsuri, String name) {
-            this.outClazz = clazz;
-            this.outObject = obj;
+                javax.xml.bind.Marshaller marshaller, String nsuri, String name) {
+            outClazz = clazz;
+            outObject = obj;
             this.marshaller = marshaller;
             this.nsuri = nsuri;
             this.name = name;
         }
 
+        @Override
         public void serialize(java.io.OutputStream output,
-            org.apache.axiom.om.OMOutputFormat format)
-            throws javax.xml.stream.XMLStreamException {
+                org.apache.axiom.om.OMOutputFormat format)
+                throws javax.xml.stream.XMLStreamException {
             try {
                 marshaller.marshal(new javax.xml.bind.JAXBElement(
                         new javax.xml.namespace.QName(nsuri, name),
                         outObject.getClass(), outObject), output);
             } catch (javax.xml.bind.JAXBException e) {
                 throw new javax.xml.stream.XMLStreamException("Error in JAXB marshalling",
-                    e);
+                        e);
             }
         }
 
+        @Override
         public void serialize(java.io.Writer writer,
-            org.apache.axiom.om.OMOutputFormat format)
-            throws javax.xml.stream.XMLStreamException {
+                org.apache.axiom.om.OMOutputFormat format)
+                throws javax.xml.stream.XMLStreamException {
             try {
                 marshaller.marshal(new javax.xml.bind.JAXBElement(
                         new javax.xml.namespace.QName(nsuri, name),
                         outObject.getClass(), outObject), writer);
             } catch (javax.xml.bind.JAXBException e) {
                 throw new javax.xml.stream.XMLStreamException("Error in JAXB marshalling",
-                    e);
+                        e);
             }
         }
 
+        @Override
         public void serialize(javax.xml.stream.XMLStreamWriter xmlWriter)
-            throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException {
             try {
                 marshaller.marshal(new javax.xml.bind.JAXBElement(
                         new javax.xml.namespace.QName(nsuri, name),
                         outObject.getClass(), outObject), xmlWriter);
             } catch (javax.xml.bind.JAXBException e) {
                 throw new javax.xml.stream.XMLStreamException("Error in JAXB marshalling",
-                    e);
+                        e);
             }
         }
 
+        @Override
         public javax.xml.stream.XMLStreamReader getReader()
-            throws javax.xml.stream.XMLStreamException {
+                throws javax.xml.stream.XMLStreamException {
             try {
                 javax.xml.bind.JAXBContext context = wsContext;
                 org.apache.axiom.om.impl.builder.SAXOMBuilder builder = new org.apache.axiom.om.impl.builder.SAXOMBuilder();
@@ -868,7 +884,7 @@ public class BenefitServiceExLITESStub extends org.apache.axis2.client.Stub {
                 return builder.getRootElement().getXMLStreamReader();
             } catch (javax.xml.bind.JAXBException e) {
                 throw new javax.xml.stream.XMLStreamException("Error in JAXB marshalling",
-                    e);
+                        e);
             }
         }
     }
