@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BenefitServiceExLITES_Interface_v1" targetNamespace="http://anthem.com/service/BenefitServiceExLITES-Interface/v1" xmlns:e="http://wellpoint.com/service/exception/v2" xmlns:h="http://wellpoint.com/esb/header/v3" xmlns:tns="http://anthem.com/service/BenefitServiceExLITES-Interface/v1" xmlns:tns1="http://anthem.com/schema/GetAcctBalanceLITESRequest/v1" xmlns:tns2="http://anthem.com/schema/GetAcctBalanceLITESResponse/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://anthem.com/service/BenefitServiceExLITES-Interface/v1">
+			<xsd:import namespace="http://anthem.com/schema/GetAcctBalanceLITESRequest/v1" schemaLocation="./schema/Get_AcctBalance/Get_AcctBalanceLITES_Request_V1.00.xsd"/>
+			<xsd:import namespace="http://anthem.com/schema/GetAcctBalanceLITESResponse/v1" schemaLocation="./schema/Get_AcctBalance/Get_AcctBalanceLITES_Response_V1.00.xsd"/>
+			<xsd:import namespace="http://wellpoint.com/esb/header/v3" schemaLocation="./schema/ESBHeader_v3.1.xsd"/>
+			<xsd:import namespace="http://wellpoint.com/service/exception/v2" schemaLocation="./schema/ExceptionList_v2.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetAcctBalanceLITES_Request">
+		<wsdl:part element="tns1:GetAcctBalanceLITESRequest" name="request"/>
+		<wsdl:part element="h:ESBHeader" name="header"/>
+	</wsdl:message>
+	<wsdl:message name="GetAcctBalanceLITES_Response">
+		<wsdl:part element="h:ESBHeader" name="header"/>
+		<wsdl:part element="tns2:GetAcctBalanceLITESResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="GetAcctBalanceLITESFault">
+		<wsdl:part element="e:ExceptionList" name="fault"/>
+	</wsdl:message>
+	<wsdl:portType name="BenefitServiceExLITES">
+		<wsdl:operation name="GetAcctBalanceLITES">
+			<wsdl:input message="tns:GetAcctBalanceLITES_Request"/>
+			<wsdl:output message="tns:GetAcctBalanceLITES_Response"/>
+			<wsdl:fault message="tns:GetAcctBalanceLITESFault" name="getAcctBalanceLITESFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

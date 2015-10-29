@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 rel. 2 (http://www.altova.com) by JAN ABBOTT (WELLPOINT, INC) -->
+<xsd:schema xmlns:e="http://wellpoint.com/service/exception/v2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://wellpoint.com/service/exception/v2" elementFormDefault="qualified">
+	<xsd:complexType name="ExceptionListType">
+		<xsd:sequence>
+			<xsd:element name="errorCount" type="xsd:integer" form="qualified" minOccurs="0"/>
+			<xsd:element name="Exception" type="e:ExceptionType" form="qualified" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ExceptionType">
+		<xsd:sequence>
+			<xsd:element name="UUID" type="xsd:string" form="qualified"/>
+			<xsd:element name="timestamp" type="xsd:string" form="qualified"/>
+			<xsd:element name="node" type="xsd:string" form="qualified"/>
+			<xsd:element name="process" type="xsd:string" form="qualified"/>
+			<xsd:element name="component" type="xsd:string" form="qualified"/>
+			<xsd:element name="code" type="xsd:string" form="qualified"/>
+			<xsd:element name="severity" type="xsd:string" form="qualified"/>
+			<xsd:element name="message" type="xsd:string" form="qualified"/>
+			<xsd:element name="detail" type="xsd:string" form="qualified" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ExceptionList" type="e:ExceptionListType"/>
+</xsd:schema>

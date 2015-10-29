@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BenefitServiceExLITES" targetNamespace="http://wsdl/BenefitServiceExLITES_Interface_v1/BenefitServiceExLITES/v1" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:tns="http://wsdl/BenefitServiceExLITES_Interface_v1/BenefitServiceExLITES/v1" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:wsdl_1="http://anthem.com/service/BenefitServiceExLITES-Interface/v1" 
+	
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" 
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsp="http://www.w3.org/ns/ws-policy" 
+	xmlns:sc="http://schemas.sun.com/2006/03/wss/client" 
+	xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" >
+	
+	  <wsp1_2:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" wsu:Id="MyWebServicePortBindingPolicy">
+      <wsp:ExactlyOne>
+         <wsp1_2:All>
+            <sp:AsymmetricBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+               <wsp1_2:Policy>
+                  <sp:InitiatorToken>
+                     <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                           <wsp:Policy>
+                              <sp:WssX509V3Token10 />
+                           </wsp:Policy>
+                        </sp:X509Token>
+                     </wsp:Policy>
+                  </sp:InitiatorToken>
+                  <sp:RecipientToken>
+                     <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToInitiator">
+                           <wsp1_2:Policy>
+                              <sp:WssX509V3Token10 />
+                           </wsp1_2:Policy>
+                        </sp:X509Token>
+                     </wsp:Policy>
+                  </sp:RecipientToken>
+                  <sp:AlgorithmSuite>
+                     <wsp:Policy>
+                        <sp:TripleDesRsa15 />
+                     </wsp:Policy>
+                  </sp:AlgorithmSuite>
+                  <sp:Layout>
+                     <wsp:Policy>
+                        <sp:Strict />
+                     </wsp:Policy>
+                  </sp:Layout>
+                  <sp:IncludeTimestamp />
+                  <sp:OnlySignEntireHeadersAndBody />
+               </wsp1_2:Policy>
+            </sp:AsymmetricBinding>
+            <sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+               <sp:Body />
+            </sp:SignedParts>
+            <sc:KeyStore wspp:visibility="private" location="client.keystore" storepass="nosecret" alias="clientkey" keypass="nosecret" />
+            <sc:TrustStore wspp:visibility="private" location="client.keystore" storepass="nosecret" peeralias="serverkey" />
+         </wsp1_2:All>
+      </wsp:ExactlyOne>
+   </wsp1_2:Policy>
+	
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://anthem.com/service/BenefitServiceExLITES-Interface/v1">
+			<xsd:import namespace="http://anthem.com/schema/GetAcctBalanceLITESRequest/v1" schemaLocation="../../schema/Get_AcctBalance/Get_AcctBalanceLITES_Request_V1.00.xsd"/>
+			<xsd:import namespace="http://anthem.com/schema/GetAcctBalanceLITESResponse/v1" schemaLocation="../../schema/Get_AcctBalance/Get_AcctBalanceLITES_Response_V1.00.xsd"/>
+			<xsd:import namespace="http://wellpoint.com/esb/header/v3" schemaLocation="../../schema/ESBHeader_v3.1.xsd"/>
+			<xsd:import namespace="http://wellpoint.com/service/exception/v2" schemaLocation="../../schema/ExceptionList_v2.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetAcctBalanceLITES_Request">
+		<wsdl:part element="tns1:GetAcctBalanceLITESRequest" name="request"/>
+		<wsdl:part element="h:ESBHeader" name="header"/>
+	</wsdl:message>
+	<wsdl:message name="GetAcctBalanceLITES_Response">
+		<wsdl:part element="h:ESBHeader" name="header"/>
+		<wsdl:part element="tns2:GetAcctBalanceLITESResponse" name="response"/>
+	</wsdl:message>
+	<wsdl:message name="GetAcctBalanceLITESFault">
+		<wsdl:part element="e:ExceptionList" name="fault"/>
+	</wsdl:message>
+	<wsdl:portType name="BenefitServiceExLITES">
+		<wsdl:operation name="GetAcctBalanceLITES">
+			<wsdl:input message="tns:GetAcctBalanceLITES_Request"/>
+			<wsdl:output message="tns:GetAcctBalanceLITES_Response"/>
+			<wsdl:fault message="tns:GetAcctBalanceLITESFault" name="getAcctBalanceLITESFault"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BenefitServiceExLITESBinding" type="wsdl_1:BenefitServiceExLITES">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetAcctBalanceLITES">
+			<soap:operation soapAction="GetAcctBalanceLITES"/>
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="wsdl_1:GetAcctBalanceLITES_Request" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+				<soap:header message="wsdl_1:GetAcctBalanceLITES_Response" part="header" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="getAcctBalanceLITESFault">
+				<soap:fault name="getAcctBalanceLITESFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="BenefitServiceExLITES">
+		<wsdl:port binding="tns:BenefitServiceExLITESBinding" name="BenefitServiceExLITESPort">
+			<soap:address location="https://localhost/Member/1.0/BenefitsServiceExLITES"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

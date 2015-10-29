@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="BenefitServiceExLITES" targetNamespace="http://wsdl/BenefitServiceExLITES_Interface_v1/BenefitServiceExLITES/v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://wsdl/BenefitServiceExLITES_Interface_v1/BenefitServiceExLITES/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl_1="http://anthem.com/service/BenefitServiceExLITES-Interface/v1">
+	<wsdl:import location="BenefitServiceExLITES_Interface_v1.wsdl" namespace="http://anthem.com/service/BenefitServiceExLITES-Interface/v1"/>
+	<wsdl:binding name="BenefitServiceExLITESBinding" type="wsdl_1:BenefitServiceExLITES">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="GetAcctBalanceLITES">
+			<soap:operation soapAction="GetAcctBalanceLITES"/>
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="wsdl_1:GetAcctBalanceLITES_Request" part="header" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+				<soap:header message="wsdl_1:GetAcctBalanceLITES_Response" part="header" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="getAcctBalanceLITESFault">
+				<soap:fault name="getAcctBalanceLITESFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="BenefitServiceExLITES">
+		<wsdl:port binding="tns:BenefitServiceExLITESBinding" name="BenefitServiceExLITESPort">
+			<soap:address location="https://localhost/Member/1.0/BenefitsServiceExLITES"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
