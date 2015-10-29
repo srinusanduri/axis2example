@@ -65,112 +65,15 @@
     <property name="jar.dir"     value="${build.dir}/jar"/>
 
 	<path id="library.corelib.classpath">
-		<pathelement location="${servicelaunchpad.home}/lib/bcprov-jdk15on-152.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/commons-cli-1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/commons-codec-1.4.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/commons-logging-1.1.1-sources.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/commons-logging-1.1.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/httpclient-4.1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/httpcore-4.1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/log4j-1.2.14.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/metro-patches.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/org-apache-commons-codec.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/stax-api.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/webservices-api.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/webservices-extra-api.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/webservices-extra.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/webservices-rt-patched.jar"/>
-		<pathelement location="${servicelaunchpad.home}/lib/webservices-tools.jar"/>
+	  <fileset dir="${servicelaunchpad.home}/lib">
+	    <include name="**/*.jar" />
+	  </fileset>
 	</path>
-	
-	
+
 	<path id="library.axis2.classpath">
 	  <fileset dir="${servicelaunchpad.home}/axis2">
 	    <include name="**/*.jar" />
 	  </fileset>
-	</path>
-	
-	
-	<path id="library.axis2.classpath.back">
-		<pathelement location="${servicelaunchpad.home}/axis2/activation-1.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/antlr-2.7.7.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/apache-mime4j-core-0.7.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axiom-api-1.2.14.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axiom-compat-1.2.14.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axiom-dom-1.2.14.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axiom-impl-1.2.14.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-adb-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-adb-codegen-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-ant-plugin-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-clustering-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-codegen-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-corba-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-fastinfoset-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-java2wsdl-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-jaxbri-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-jaxws-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-jibx-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-json-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-kernel-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-metadata-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-mtompolicy-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-saaj-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-soapmonitor-servlet-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-spring-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-transport-base-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-transport-http-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-transport-jms-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-transport-local-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-transport-mail-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-transport-tcp-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-transport-udp-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-transport-xmpp-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/axis2-xmlbeans-1.6.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/bcel-5.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/commons-cli-1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/commons-codec-1.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/commons-fileupload-1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/commons-httpclient-3.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/commons-io-2.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/commons-logging-1.1.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/endorsed"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/geronimo-annotation_1.0_spec-1.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/geronimo-jaxws_2.2_spec-1.0.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/geronimo-jta_1.1_spec-1.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/geronimo-saaj_1.3_spec-1.0.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/geronimo-stax-api_1.0_spec-1.0.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/geronimo-ws-metadata_2.0_spec-1.1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/httpcore-4.0.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jalopy-1.5rc3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jaxb-api-2.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jaxb-impl-2.1.7.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jaxb-xjc-2.1.7.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jaxen-1.1.4.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jaxws-tools-2.1.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jettison-1.3.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jibx-bind-1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jibx-run-1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/jsr311-api-1.1.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/juli-6.0.16.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/log4j-1.2.15.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/mail-1.4.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/mex-1.6.3-impl.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/neethi-3.0.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/rampart-core-1.6.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/rampart-policy-1.6.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/rampart-trust-1.6.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/regexp-1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/stax2-api-3.1.1.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/tribes-6.0.16.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/woden-api-1.0M9.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/woden-impl-commons-1.0M9.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/woden-impl-dom-1.0M9.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/woodstox-core-asl-4.1.4.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/wsdl4j-1.6.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/xalan-2.7.0.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/xml-resolver-1.2.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/xmlbeans-2.3.0.jar"/>
-		<pathelement location="${servicelaunchpad.home}/axis2/XmlSchema-1.4.7.jar"/>
 	</path>
 	
 	<path id="project.classpath">
