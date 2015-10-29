@@ -6,6 +6,10 @@
  */
 package anthem.axix2.client;
 
+
+import org.apache.axis2.context.ConfigurationContext;
+import org.apache.axis2.context.ConfigurationContextFactory;
+
 import anthem.axis.schema.getacctbalancelitesrequest.v1.GetAcctBalanceLITESRequest;
 import anthem.axix2.schema.getacctbalancelitesresponse.v1.GetAcctBalanceLITESResponse;
 import anthem.axix2.wellpoint.esb.header.v3.ESBHeaderType;
@@ -20,12 +24,12 @@ public class BenefitServiceExLITESClient
 {
 	static{
 		
-        System.setProperty("javax.net.ssl.trustStore", AnthemWSConfigs.KEYSTORE_PATH);
-        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
-        
-        System.setProperty("javax.net.ssl.keyStore", AnthemWSConfigs.KEYSTORE_PATH);
-        System.setProperty("javax.net.ssl.keyStorePassword", "changeit");
-        System.setProperty("javax.net.ssl.keyAlias", "clh_prod");
+//        System.setProperty("javax.net.ssl.trustStore", AnthemWSConfigs.KEYSTORE_PATH);
+//        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
+//        
+//        System.setProperty("javax.net.ssl.keyStore", AnthemWSConfigs.KEYSTORE_PATH);
+//        System.setProperty("javax.net.ssl.keyStorePassword", "changeit");
+//        System.setProperty("javax.net.ssl.keyAlias", "clh_prod");
         
         
         // prints
@@ -60,7 +64,12 @@ public class BenefitServiceExLITESClient
      */
     public void testgetAcctBalanceLITES() throws java.lang.Exception 
     {
-        BenefitServiceExLITESStub stub =  new BenefitServiceExLITESStub();
+    	
+    	ConfigurationContext ctx = ConfigurationContextFactory
+    	         .createConfigurationContextFromFileSystem(AnthemWSConfigs.AXIS2_HOME + "repository",AnthemWSConfigs.AXIS2_HOME + "conf/axis2.xml");
+
+    	
+        BenefitServiceExLITESStub stub =  new BenefitServiceExLITESStub(ctx);
 
         GetAcctBalanceLITESRequest request = RequestCreator.createRequest();
         ESBHeaderType esbHeader = RequestCreator.createESBHeader();

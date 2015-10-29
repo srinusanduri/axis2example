@@ -6,10 +6,6 @@
  */
 package anthem.axix2.client;
 
-
-import org.apache.axis2.context.ConfigurationContext;
-import org.apache.axis2.context.ConfigurationContextFactory;
-
 import anthem.axis.schema.getacctbalancelitesrequest.v1.GetAcctBalanceLITESRequest;
 import anthem.axix2.schema.getacctbalancelitesresponse.v1.GetAcctBalanceLITESResponse;
 import anthem.axix2.wellpoint.esb.header.v3.ESBHeaderType;
@@ -20,26 +16,22 @@ import anthem.axix2.wsdl.benefitserviceexlites_interface_v1.benefitserviceexlite
 /*
  *  BenefitServiceExLITESTest Junit test case
  */
-public class BenefitServiceExLITESClient_V1 
+public class BenefitServiceExLITESClient_V00 
 {
 	static{
 		
-//        System.setProperty("javax.net.ssl.trustStore", AnthemWSConfigs.KEYSTORE_PATH);
-//        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
-//        
-//        System.setProperty("javax.net.ssl.keyStore", AnthemWSConfigs.KEYSTORE_PATH);
-//        System.setProperty("javax.net.ssl.keyStorePassword", "changeit");
-//        System.setProperty("javax.net.ssl.keyAlias", "clh_prod");
+        System.setProperty("javax.net.ssl.trustStore", AnthemWSConfigs.KEYSTORE_PATH);
+        System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
         
+        System.setProperty("javax.net.ssl.keyStore", AnthemWSConfigs.KEYSTORE_PATH);
+        System.setProperty("javax.net.ssl.keyStorePassword", "changeit");
+        System.setProperty("javax.net.ssl.keyAlias", "clh_prod");
         
         // prints
-        
         System.setProperty("org.apache.commons.logging.Log", "org.apache.commons.logging.impl.SimpleLog");
         System.setProperty("org.apache.commons.logging.simplelog.showdatetime", "true");
         System.setProperty("org.apache.commons.logging.simplelog.log.httpclient.wire", "debug");
         System.setProperty("org.apache.commons.logging.simplelog.log.org.apache.commons.httpclient", "debug");
-        
-        	
 	}
 	
 	
@@ -54,7 +46,7 @@ public class BenefitServiceExLITESClient_V1
 	 */
 	
 	public static void main(String[] args) throws Exception {
-		BenefitServiceExLITESClient_V1 client = new BenefitServiceExLITESClient_V1();
+		BenefitServiceExLITESClient_V00 client = new BenefitServiceExLITESClient_V00();
 		client.testgetAcctBalanceLITES();
 		//client.testStartgetAcctBalanceLITES();
 	}
@@ -64,13 +56,7 @@ public class BenefitServiceExLITESClient_V1
      */
     public void testgetAcctBalanceLITES() throws java.lang.Exception 
     {
-    	
-    	ConfigurationContext ctx = ConfigurationContextFactory
-    	         .createConfigurationContextFromFileSystem("/Users/sreenivass/Documents/Softwares/Axis2/axis2-1.6.3/repository",
-    	                                                   "/Users/sreenivass/Documents/Softwares/Axis2/axis2-1.6.3/conf/axis2.xml");
-
-    	
-        BenefitServiceExLITESStub stub =  new BenefitServiceExLITESStub(ctx);
+        BenefitServiceExLITESStub stub =  new BenefitServiceExLITESStub();
 
         GetAcctBalanceLITESRequest request = RequestCreator.createRequest();
         ESBHeaderType esbHeader = RequestCreator.createESBHeader();
